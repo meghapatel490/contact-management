@@ -13,3 +13,8 @@ A brief explanation of design decisions and application structure
 - Added api validation in the model using data annotation
 - Added common exception handler for setting own error message to use it all apis and registerd in program file
 - Added CORS policy to alllow access for angular (third party domain)
+
+Performance Considerations:
+ - Using a modular, loosely coupled architecture that can be useful for performance improvement
+ - We can use async/await for asyncronous tasks for long running or lengthy process
+ - We csn use cloud-based security solutions for scalability
