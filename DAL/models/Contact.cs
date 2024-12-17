@@ -1,4 +1,4 @@
-namespace contact_management_system
+namespace DAL.models
 {
     public class Contact
     {

@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35506.116 d17.12
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "contact-management-system", "contact-management-system.csproj", "{EC456C6C-2219-4929-9805-DE23BE9008D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "..\BAL\BAL.csproj", "{0A66CDBB-6B1D-4DBE-A349-BD181EA03C1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{26500616-6F21-46C5-A4C1-999FD0380EC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{EC456C6C-2219-4929-9805-DE23BE9008D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC456C6C-2219-4929-9805-DE23BE9008D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC456C6C-2219-4929-9805-DE23BE9008D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A66CDBB-6B1D-4DBE-A349-BD181EA03C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A66CDBB-6B1D-4DBE-A349-BD181EA03C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A66CDBB-6B1D-4DBE-A349-BD181EA03C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A66CDBB-6B1D-4DBE-A349-BD181EA03C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26500616-6F21-46C5-A4C1-999FD0380EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26500616-6F21-46C5-A4C1-999FD0380EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26500616-6F21-46C5-A4C1-999FD0380EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26500616-6F21-46C5-A4C1-999FD0380EC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
-﻿using contact_management_system.BusinessLogic.Interface;
+﻿using BAL.Interface;
+using DAL.models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace contact_management_system.Controllers
@@ -16,6 +17,10 @@ namespace contact_management_system.Controllers
             _contactManagementService = contactManagementService;
         }
 
+        /// <summary>
+        /// Get contacts
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -24,6 +29,11 @@ namespace contact_management_system.Controllers
             return Ok(contacts);
         }
 
+        /// <summary>
+        /// Get contactRequest by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -36,26 +46,48 @@ namespace contact_management_system.Controllers
             return Ok(existingContact);
         }
 
-
+        /// <summary>
+        /// Add new contactRequest
+        /// </summary>
+        /// <param name="contact"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddContact([FromBody] CreateContactRequest contact)
         {
-            var newContactId = _contactManagementService.AddContact(contact);
+            Contact newContact = new Contact();
+            newContact.FirstName = contact.FirstName;
+            newContact.LastName = contact.LastName;
+            newContact.Email = contact.Email;
+            var newContactId = _contactManagementService.AddContact(newContact);
             return CreatedAtAction(nameof(AddContact), new { id = newContactId });
         }
 
+        /// <summary>
+        /// Update contactRequest details
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="contactRequest"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
-        public ActionResult UpdateContact(int id, [FromBody] UpdateContactRequest contact)
+        public ActionResult UpdateContact(int id, [FromBody] UpdateContactRequest contactRequest)
         {
             Contact? existingContact = _contactManagementService.GetContactById(id);
             if (existingContact == null)
             {
                 return NotFound();
             }
-            _contactManagementService.UpdateContact(contact, id);
+            existingContact.FirstName = contactRequest.FirstName;
+            existingContact.LastName = contactRequest.LastName;
+            existingContact.Email = contactRequest.Email;
+            _contactManagementService.UpdateContact(existingContact);
             return NoContent();
         }
 
+        /// <summary>
+        /// Delete contactRequest by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public ActionResult DeletePerson(int id)
         {
@@ -64,7 +96,7 @@ namespace contact_management_system.Controllers
             {
                 return NotFound();
             }
-            _contactManagementService.RemoveContact(id);
+            _contactManagementService.RemoveContact(existingContact);
             return NoContent();
         }
     }

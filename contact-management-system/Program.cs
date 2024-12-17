@@ -1,6 +1,9 @@
-using contact_management_system.BusinessLogic.Implementation;
-using contact_management_system.BusinessLogic.Interface;
+using BAL.Implementation;
+using BAL.Interface;
 using contact_management_system.GlobalException;
+using DAL.Implementation;
+using DAL.Interface;
+using DAL.models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +16,7 @@ builder.Services.AddSwaggerGen();
 
 // ragister service for dependencies. Added By : Megha Patel
 builder.Services.AddSingleton<IContactManagementService, ContactManagementService>();
+builder.Services.AddSingleton<IRepository<Contact>, ContactRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
