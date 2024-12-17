@@ -30,7 +30,7 @@ namespace contact_management_system.Controllers
         }
 
         /// <summary>
-        /// Get contactRequest by id
+        /// Get contact by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -47,7 +47,7 @@ namespace contact_management_system.Controllers
         }
 
         /// <summary>
-        /// Add new contactRequest
+        /// Add new contact
         /// </summary>
         /// <param name="contact"></param>
         /// <returns></returns>
@@ -63,7 +63,7 @@ namespace contact_management_system.Controllers
         }
 
         /// <summary>
-        /// Update contactRequest details
+        /// Update contact details
         /// </summary>
         /// <param name="id"></param>
         /// <param name="contactRequest"></param>
@@ -84,7 +84,7 @@ namespace contact_management_system.Controllers
         }
 
         /// <summary>
-        /// Delete contactRequest by id
+        /// Delete contact by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
